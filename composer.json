@@ -1,0 +1,29 @@
+{
+    "name": "opus-online/yii2-enum",
+    "description": "Enumeration extension for Yii2",
+    "version": "0.1.0",
+    "keywords": ["yii", "yii2", "enumeration", "enum", "type", "classifier"],
+    "licence": "MIT",
+    "type": "yii2-extension",
+    "homepage": "https://github.com/opus-online/yii2-enum/",
+    "support": {
+        "issues": "https://github.com/opus-online/yii2-enum/issues",
+        "source": "https://github.com/opus-online/yii2-enum/"
+    },
+    "authors": [
+        {
+            "name": "Ivo Kund",
+            "email": "ivo@opus.ee"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "yiisoft/yii2": "*",
+        "symfony/yaml": "2.5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "opus\\enum\\": "src"
+        }
+    }
+}
