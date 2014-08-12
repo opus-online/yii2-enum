@@ -30,18 +30,19 @@ Usage
 -----
 Define your types in a Yaml file:
 ```yaml
-PrevalenceThreshold:
-  - PERCENTAGE
-  - TIMES
-  - STATISTICAL
+Gender:
+  - MALE
+  - FEMALE
+  - OTHER
 # you can also use shorter syntax
-Behaviour: [COMMERCIAL, CUSTOM, OFFICIAL]
-TrpResult:
-  - TREND_CONTINUES
-  # and you can define an explicit value for the type
-  - TREND_REVERSED:
-      value: 300
-  - TREND_CHANGED_AND_CAN_REVERSE
+UserStatus: [ACTIVE, INACTIVE, BLOCKED]
+# and you can define an explicit value for the type
+TrendDirection:
+  - INCREASING
+      value: 1
+  - DECREASING:
+      value: -1
+  - NOT_DETERMINED
 ```
 
 Run the build command to generate PHP classes for the definition.
@@ -53,17 +54,16 @@ and places the files into a directory that corresponds to `@app/src/enum` path a
 
 After this you can use enumeration types like this:
 ```php
-echo Behaviour::COMMERCIAL; // COMMERCIAL
-echo TrpResult::TREND_REVERSED; // 300
+echo UserStatus::INACTIVE; // INACTIVE
+echo TrendDirection::DECREASING; // -1
 
 // return all values of a type
-TrpResult::getList();
+TrendDirection::getList();
 
 // return a human-readable label for one value (by constant name)
-echo TrpResult::getLabel('TREND_CONTINUES'); // Trend continues
+echo TrendDirection::getLabel('NOT_DETERMINED'); // Not determined
 
-// returns an array type where type value is the key and human readable
+// returns an array where type value is the key and human readable
 // label is the value. This can be useful when populating drop-downs
-TrpResult::getListLabels();
-
+TrendDirection::getListLabels();
 ```
