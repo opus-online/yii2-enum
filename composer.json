@@ -1,7 +1,6 @@
 {
     "name": "opus-online/yii2-enum",
     "description": "Enumeration extension for Yii2",
-    "version": "0.1.0",
     "keywords": ["yii", "yii2", "enumeration", "enum", "type", "classifier"],
     "licence": "MIT",
     "type": "yii2-extension",
