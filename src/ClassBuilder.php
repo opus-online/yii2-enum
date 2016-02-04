@@ -73,9 +73,9 @@ class ClassBuilder extends Object implements ViewContextInterface
                 $constValue = "'$value'";
             } elseif (is_array($value)) {
                 list($partKey, $partVal) = each($value);
-                if (is_string($partKey) && isset($partVal['value'])) {
+                if (is_string($partKey) && (is_string($partVal) || isset($partVal['value']))) {
                     $constKey = $partKey;
-                    $constValue = $partVal['value'];
+                    $constValue = "'" . (is_string($partVal) ? $partVal : $partVal['value']) . "'";
                 }
             }
 
